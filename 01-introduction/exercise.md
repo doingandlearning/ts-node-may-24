@@ -24,6 +24,10 @@ node will-throw.js
 
 5. Compare the `server.js` to the `server.ts` file. Try running the `server.ts` using one of these three strategies:
 
+   - `npm install -g typescript` to globally install TypeScript
+
 - Run `tsc` and then `node server.js`
-- Run `ts-node server.ts`
+
+  - `npm install -g tsx` to globally install tsx
+
 - Run `tsx server.ts`
