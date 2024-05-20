@@ -36,7 +36,7 @@ const server = http.createServer(
                     <title>About Me</title>
                 </head>
                 <body>
-                    <h1>About ${query!.name || "Me"}</h1>
+                    <h1>About ${query["name"] || "Me"}</h1>
                     <p>I have skills in ${query.skills}.</p>
                 </body>
             </html>
