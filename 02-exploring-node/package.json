@@ -9,6 +9,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@types/node": "^20.12.12"
+    "@types/node": "^20.12.12",
+    "dotenv": "^16.4.5"
   }
 }
