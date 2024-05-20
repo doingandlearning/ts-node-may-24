@@ -2,7 +2,7 @@
 // ES7 - ES2016
 // ES8 - ES2017
 // ES2018
-
+export {};
 // tc39
 
 // 1. Default Parameters
@@ -26,8 +26,13 @@ console.log(fullName);
 const fullName1 = `Your full name is ${firstName} ${lastName}.`;
 console.log(fullName1);
 
-const name = "Jack";
+type ValidNames = "Jack" | "Jason" | "Estelle" | "Susila";
+
+const name = "Jack"; // user input? database? runtime?
 const jack = "Jack";
+
+// Type Level
+// Value Level
 
 console.log(name === jack);
 
@@ -128,10 +133,8 @@ function simulateDom() {
 
 simulateDom();
 
-const arr1 = [1, 3, 2];
+const arr1 = [1, 2, 3];
 const arr2 = [1, 2, 3];
-console.log(JSON.stringify(arr1) === JSON.stringify(arr2));
-
 const arr3 = arr2;
 
 arr3.push(7);
