@@ -15,7 +15,7 @@ async function getAllData() {
   // const species = await getSpecies();
 
   // const [people, species] = await Promise.all([getPeople(), getSpecies()]);
-  const [people, species] = await Promise.allSettled([
+  const [people: Person, species] = await Promise.allSettled([
     getPeople(),
     getSpecies(),
   ]);

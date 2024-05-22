@@ -29,7 +29,7 @@
 - Evolution of Async in Node
 ---
 - Node.js Module System
-- Debugging with Node
+- Debugging with Node  (12.45!!)
 ---
 - RESTful Services
 - Express
