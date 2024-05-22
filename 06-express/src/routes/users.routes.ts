@@ -3,6 +3,7 @@ import {
   createUser,
   getAllUsers,
   getUserById,
+  updateUser,
 } from "../controllers/users.controller";
 const router = Router();
 
@@ -20,8 +21,6 @@ router.put("/:userId", (req: Request, res: Response) => {
   res.send("Not implemented yet.");
 });
 
-router.patch("/:userId", (req: Request, res: Response) => {
-  res.send("Not implemented yet.");
-});
+router.patch("/:userId", updateUser);
 
 export default router;
