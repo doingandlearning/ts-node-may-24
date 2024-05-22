@@ -1,4 +1,5 @@
 import express, { Request, Response, NextFunction } from "express";
+import userRouter from "./routes/users.routes";
 
 // Instaniate the app
 const app = express();
@@ -6,6 +7,7 @@ const app = express();
 // Add any global middleware
 
 // Add routers and routes
+app.use("/api/v1/users", userRouter);
 
 app.get("/", (req: Request, res: Response, next: NextFunction) => {
   res.json({ message: "Hello world" });
