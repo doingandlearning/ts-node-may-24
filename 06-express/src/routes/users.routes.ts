@@ -23,4 +23,8 @@ router.put("/:userId", (req: Request, res: Response) => {
   res.send("Not implemented yet.");
 });
 
+router.patch("/:userId", (req: Request, res: Response) => {
+  res.send("Not implemented yet.");
+});
+
 export default router;
