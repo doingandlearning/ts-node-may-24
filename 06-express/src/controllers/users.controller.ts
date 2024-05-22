@@ -27,4 +27,18 @@ export function getUserById(req: Request, res: Response, next: NextFunction) {
   }
   res.json(user);
 }
+
+export function updateUser(req: Request, res: Response, next: NextFunction) {
+  const userId = req.params.userId;
+  const userIndex = users.findIndex((user) => user.id === userId);
+
+  if (userIndex === -1) {
+    return res.status(404).json({ message: "User not found" });
+  }
+
+  // ... spread operator
+  users[userIndex] = { ...users[userIndex], ...req.body };
+
+  res.json(users[userIndex]);
+}
 // export default { createUser };
