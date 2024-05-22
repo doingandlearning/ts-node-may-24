@@ -36,5 +36,5 @@ async function getPeople() {
 }
 
 async function getData() {
-  const people: Person[] = await getPeople();
+  // const people: Person[] = await getPeople();
 }

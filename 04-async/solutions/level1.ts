@@ -16,6 +16,7 @@ async function fetchData(): Promise<void> {
     );
     // 4. Convert the response to JSON format and cast it to the Todo type
     const data: Todo = await response.json();
+    debugger;
     // 5. Print the data to the console
     console.log(data);
   } catch (error) {
@@ -25,4 +26,5 @@ async function fetchData(): Promise<void> {
 }
 
 // 7. Call the fetchData function
+
 fetchData();
