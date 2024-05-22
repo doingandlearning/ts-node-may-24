@@ -16,7 +16,7 @@ export function createUser(req: Request, res: Response, next: NextFunction) {
 }
 
 export function getAllUsers(req: Request, res: Response, next: NextFunction) {
-  res.send(users);
+  res.json(users);
 }
 
 // export default { createUser };
