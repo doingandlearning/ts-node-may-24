@@ -24,12 +24,17 @@ interface APIResponse {
   results: Person[];
 }
 
-async function getData() {
-  const data = await fetch("https://swapi.dev/api/people"); // This is a response object
-  console.log(data);
-  const people: APIResponse = await data.json(); //
-  // console.log(people.results[0].name, people.results[0]);
-  // console.log(people.results[0]);
+async function getPeople() {
+  try {
+    const data = await fetch("https://swapi.dev/api/people"); // This is a response object
+    console.log(data);
+    const people: APIResponse = await data.json(); //
+    return people.results;
+  } catch (error) {
+    console.log(error);
+  }
 }
 
-getData();
+async function getData() {
+  const people: Person[] = await getPeople();
+}
