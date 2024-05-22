@@ -62,4 +62,17 @@ export function replaceUser(req: Request, res: Response, next: NextFunction) {
   users[userIndex] = user;
   res.json(user);
 }
+
+export function deleteUser(req: Request, res: Response, next: NextFunction) {
+  const userId = req.params.userId;
+  const userIndex = users.findIndex((user) => user.id === userId);
+
+  if (userIndex === -1) {
+    return res.status(404).json({ message: "User not found" });
+  }
+
+  users.splice(userIndex, 1);
+
+  res.status(204).send();
+}
 // export default { createUser };
