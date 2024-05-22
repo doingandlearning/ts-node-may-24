@@ -11,13 +11,16 @@ router.post("/", (req: Request, res: Response) => {
   res.send("Not implemented yet.");
 });
 
-router
-  .route("/")
-  .get((req: Request, res: Response) => {
-    res.send("Not implemented yet.");
-  })
-  .post((req: Request, res: Response) => {
-    res.send("Not implemented yet.");
-  });
+router.get("/:userId", (req: Request, res: Response) => {
+  res.send("Not implemented yet.");
+});
+
+router.delete("/:userId", (req: Request, res: Response) => {
+  res.send("Not implemented yet.");
+});
+
+router.put("/:userId", (req: Request, res: Response) => {
+  res.send("Not implemented yet.");
+});
 
 export default router;
