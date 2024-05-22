@@ -59,7 +59,7 @@ export default router;
 5. **Integrate with the Application**: Import the task routes into your `app.ts` and mount them.
 
 ```typescript
-// src/app.ts
+// src/index.ts
 import taskRoutes from './routes/task.routes';
 
 // ... other imports and middleware ...
@@ -70,6 +70,7 @@ app.use('/api/tasks', taskRoutes);
 ```
 
 6. **Manual Testing**: Test your task routes manually using Postman or curl to ensure they work as expected.
+
 
 ### Activity 2: Add Validation and Error Handling Middleware
 
