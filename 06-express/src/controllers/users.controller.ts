@@ -4,7 +4,7 @@ import { User } from "../models/users.model";
 const users: User[] = [];
 
 export function createUser(req: Request, res: Response, next: NextFunction) {
-  const user: User = req.body;
+  const user: User = req.body; // id!!
   if (!user.location || !user.name) {
     return res
       .status(400)
@@ -13,6 +13,10 @@ export function createUser(req: Request, res: Response, next: NextFunction) {
   user.id = String(users.length + 1);
   users.push(user);
   res.json(user);
+}
+
+export function getAllUsers(req: Request, res: Response, next: NextFunction) {
+  res.send(users);
 }
 
 // export default { createUser };

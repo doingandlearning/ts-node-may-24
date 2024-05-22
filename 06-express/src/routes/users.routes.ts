@@ -1,12 +1,9 @@
 import { Router, Request, Response } from "express";
-import { createUser } from "../controllers/users.controller";
+import { createUser, getAllUsers } from "../controllers/users.controller";
 const router = Router();
 
 // Add some routes
-router.get("/", (req: Request, res: Response) => {
-  res.send("Not implemented yet.");
-});
-
+router.get("/", getAllUsers);
 router.post("/", createUser);
 
 router.get("/:userId", (req: Request, res: Response) => {

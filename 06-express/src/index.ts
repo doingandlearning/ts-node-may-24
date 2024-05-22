@@ -5,6 +5,7 @@ import userRouter from "./routes/users.routes";
 const app = express();
 
 // Add any global middleware
+app.use(express.json());
 
 // Add routers and routes
 app.use("/api/v1/users", userRouter);
