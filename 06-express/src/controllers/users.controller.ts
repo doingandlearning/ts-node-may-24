@@ -41,4 +41,25 @@ export function updateUser(req: Request, res: Response, next: NextFunction) {
 
   res.json(users[userIndex]);
 }
+
+export function replaceUser(req: Request, res: Response, next: NextFunction) {
+  const userId = req.params.userId;
+  const userIndex = users.findIndex((user) => user.id === userId);
+
+  if (userIndex === -1) {
+    return res.status(404).json({ message: "User not found" });
+  }
+
+  const user = req.body;
+
+  if (!user.location || !user.name) {
+    return res
+      .status(400)
+      .json({ message: "You need to send the location and name" });
+  }
+
+  user.id = userId;
+  users[userIndex] = user;
+  res.json(user);
+}
 // export default { createUser };
