@@ -3,6 +3,7 @@ import {
   createUser,
   getAllUsers,
   getUserById,
+  replaceUser,
   updateUser,
 } from "../controllers/users.controller";
 const router = Router();
@@ -17,10 +18,7 @@ router.delete("/:userId", (req: Request, res: Response) => {
   res.send("Not implemented yet.");
 });
 
-router.put("/:userId", (req: Request, res: Response) => {
-  res.send("Not implemented yet.");
-});
-
+router.put("/:userId", replaceUser);
 router.patch("/:userId", updateUser);
 
 export default router;
