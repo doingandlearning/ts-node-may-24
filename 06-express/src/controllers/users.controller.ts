@@ -16,7 +16,15 @@ export function createUser(req: Request, res: Response, next: NextFunction) {
 }
 
 export function getAllUsers(req: Request, res: Response, next: NextFunction) {
-  res.json(users);
+  return res.json(users);
 }
 
+export function getUserById(req: Request, res: Response, next: NextFunction) {
+  const user = users.find((user) => user.id === req.params.userId);
+
+  if (!user) {
+    return res.status(404).json({ message: "User not found" });
+  }
+  res.json(user);
+}
 // export default { createUser };
