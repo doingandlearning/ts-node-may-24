@@ -23,20 +23,25 @@
 - Node.js Overview
 - Exploring Node
 - Core JS Concepts
-- Evolution of Async in Node
 
 ## Day 2: Refactor API to use a Node framework
 
+- Evolution of Async in Node
+---
 - Node.js Module System
 - Debugging with Node
-- Restful Services
+---
+- RESTful Services
 - Express
+---
 - Events in Node
-- Node.js testing
 
 ## Day 3: Refactor API to have a persistent backend
 
 - Node.js testing
+---
 - Buffers and Streams
 - Error handling
+---
 - Node.js and Databases
+---
