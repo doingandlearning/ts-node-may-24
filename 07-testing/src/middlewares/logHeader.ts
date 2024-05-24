@@ -5,7 +5,6 @@ export default function logHeader(
   res: Response,
   next: NextFunction
 ) {
-  // req.get("x-log")
   if (req.headers && req.headers["x-log"]) {
     console.log(`X-Log Header: ${req.headers["x-log"]}`);
   }
