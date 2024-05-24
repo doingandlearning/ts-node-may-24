@@ -1,18 +1,20 @@
 import { Request, Response, NextFunction } from "express";
 import { User } from "../models/users.model";
 
-const users: User[] = [];
+// const users: User[] = [];
 
-export function createUser(req: Request, res: Response, next: NextFunction) {
-  const user: User = req.body; // id!!
-  if (!user.location || !user.name) {
-    throw new Error("You need to send the location and name");
+export async function createUser(
+  req: Request,
+  res: Response,
+  next: NextFunction
+) {
+  try {
+    const newUser = await User.create(req.body);
+    res.status(201).json(newUser);
+  } catch (error) {
+    next(error);
   }
-  user.id = String(users.length + 1);
-  users.push(user);
-  res.status(201).json(user);
 }
-
 export function getAllUsers(req: Request, res: Response, next: NextFunction) {
   return res.json(users);
 }
