@@ -1,6 +1,8 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.deleteTask = exports.updateTask = exports.getTaskById = exports.getAllTasks = exports.createTask = void 0;
+const math_1 = require("@utils/math");
+console.log((0, math_1.add)(1, 2));
 const tasks = [];
 let taskId = 0;
 function getNewId() {

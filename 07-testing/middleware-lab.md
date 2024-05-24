@@ -8,7 +8,7 @@ Create a custom middleware that checks for a custom header (`X-Log`) and logs it
 #### Step 1: Create the Middleware
 
 1. **Create a new middleware file**:
-   - Navigate to your `src/middleware/` directory (or create it if it doesn't exist).
+   - Navigate to your `src/middlewares/` directory (or create it if it doesn't exist).
    - Create a file named `logHeader.ts`.
 
 2. **Define the middleware function**:
@@ -16,12 +16,10 @@ Create a custom middleware that checks for a custom header (`X-Log`) and logs it
    - If the `X-Log` header is present, log its value.
    - Always call `next()` to pass control to the next middleware.
 
-
-
 #### Step 2: Create Tests for the Middleware
 
 1. **Create a test directory and file**:
-   - Navigate to your `src/middleware/` directory.
+   - Navigate to your `src/middlewares/` directory.
    - Create a subdirectory named `__tests__` if it doesn't exist.
    - Inside the `__tests__` directory, create a file named `logHeader.test.ts`.
 
