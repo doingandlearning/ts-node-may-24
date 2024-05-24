@@ -3,7 +3,7 @@
 - May 20th, May 22nd and May 24th
 - Kevin Cunningham
 - Miro Link: https://miro.com/app/board/uXjVKFzi5HM=/?share_link_id=488379123670
-- Feedback link:
+- Feedback link: https://forms.microsoft.com/e/E5Zzxwq24N
 
 # Timings:
 
