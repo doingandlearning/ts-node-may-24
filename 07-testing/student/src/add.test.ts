@@ -1,4 +1,3 @@
-import { expect } from "chai";
 import add from "./add";
 
 // Exercise 1

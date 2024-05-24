@@ -1,4 +1,3 @@
-import { expect } from "chai";
 import filterBiggestNumbers from "./filterBiggest";
 
 // Exercise 5
