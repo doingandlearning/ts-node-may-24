@@ -1,0 +1,3 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`this will fail if i don't pass in numbers 1`] = `"Both arguments should be numbers"`;
