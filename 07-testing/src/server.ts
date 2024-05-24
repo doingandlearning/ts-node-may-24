@@ -1,6 +1,7 @@
 import express, { Request, Response, NextFunction } from "express";
 import userRouter from "./routes/users.routes";
 import taskRouter from "./routes/tasks.routes";
+import authorization from "./middlewares/authorization";
 // Instaniate the app
 const app = express();
 

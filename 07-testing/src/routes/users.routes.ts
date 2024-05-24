@@ -7,13 +7,15 @@ import {
   updateUser,
   deleteUser,
 } from "../controllers/users.controller";
+import authorization from "../middlewares/authorization";
+
 const router = Router();
 
 router.get("/", getAllUsers);
-router.post("/", createUser);
+router.post("/", authorization, createUser);
 router.get("/:userId", getUserById);
-router.delete("/:userId", deleteUser);
-router.put("/:userId", replaceUser);
-router.patch("/:userId", updateUser);
+router.delete("/:userId", authorization, deleteUser);
+router.put("/:userId", authorization, replaceUser);
+router.patch("/:userId", authorization, updateUser);
 
 export default router;

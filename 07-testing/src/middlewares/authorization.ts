@@ -8,8 +8,8 @@ export default function authorization(
   // to get out of the way as quickly as possible!
   if (!req.headers || !req.headers["authorization"]) {
     res.statusCode = 403;
-    res.json({ error: "Missing JWT token" });
-  } else {
-    next();
+    return res.json({ error: "Missing JWT token" });
   }
+
+  next();
 }
