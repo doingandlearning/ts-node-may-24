@@ -9,7 +9,7 @@ describe("Authorization middleware", () => {
   beforeEach(() => {
     mockRequest = {};
     mockResponse = {
-      json: jest.fn(),
+      json: jest.fn(), // res.json()
     };
   });
 
@@ -31,7 +31,7 @@ describe("Authorization middleware", () => {
       error: "Missing JWT token from the 'Authorization' header",
     };
     mockRequest = {
-      headers: {},
+      headers: { "content-type": "application/json" },
     };
     authorizationMiddleware(
       mockRequest as Request,

@@ -12,10 +12,10 @@ import authorization from "../middlewares/authorization";
 const router = Router();
 
 router.get("/", getAllUsers);
-router.post("/", authorization, createUser);
+router.post("/", createUser);
 router.get("/:userId", getUserById);
-router.delete("/:userId", authorization, deleteUser);
-router.put("/:userId", authorization, replaceUser);
-router.patch("/:userId", authorization, updateUser);
+router.delete("/:userId", deleteUser);
+router.put("/:userId", replaceUser);
+router.patch("/:userId", updateUser);
 
 export default router;
