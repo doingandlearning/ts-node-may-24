@@ -4,7 +4,7 @@ import { add } from "./math";
 // it/test
 
 describe("happy path tests", () => {
-  test("add two numbers together correctly", () => {
+  test("valid: add two numbers together correctly", () => {
     // Arrange - Given
     const num1 = 7;
     const num2 = 10;
@@ -13,7 +13,7 @@ describe("happy path tests", () => {
     // Act - When
     const result = add(num1, num2);
     // Assert - Then
-    expect(result).toBe(17);
+    expect(result).toBe(want);
   });
 });
 
