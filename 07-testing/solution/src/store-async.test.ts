@@ -5,9 +5,9 @@ describe("store function", () => {
     it("should return an object with an id when given a Buffer", async () => {
       const buffer = Buffer.from("Test data");
       const result = await store(buffer);
-      expect(result).to.have.property("id");
-      expect(result.id).to.be.a("string");
-      expect(result.id).to.have.lengthOf(4);
+      expect(result.id).toBeDefined();
+      expect(typeof result.id).toEqual("string");
+      expect(result.id.length).toBe(4);
     });
   });
 
@@ -19,8 +19,7 @@ describe("store function", () => {
         throw new Error("store did not throw an error with invalid input"); // Fail test if no error thrown
       } catch (error) {
         if (error instanceof Error) {
-          expect(error).to.be.instanceOf(Error);
-          expect(error.message).to.equal("input must be a buffer");
+          expect(error.message).toEqual("input must be a buffer");
         }
       }
     });
@@ -32,7 +31,7 @@ describe("store function", () => {
       const startTime = Date.now();
       await store(buffer);
       const endTime = Date.now();
-      expect(endTime - startTime).to.be.at.least(300);
+      expect(endTime - startTime).toBeGreaterThanOrEqual(300);
     });
   });
 });

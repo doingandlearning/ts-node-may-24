@@ -5,10 +5,10 @@ describe("store function", () => {
     it("should return an object with an id when given a Buffer", (done) => {
       const buffer = Buffer.from("Test data");
       store(buffer, (error, data) => {
-        expect(error).to.be.null;
-        expect(data).to.have.property("id");
-        expect(data?.id).to.be.a("string");
-        expect(data?.id).to.have.lengthOf(4);
+        expect(error).toBe(null);
+        expect(data?.id).toBeDefined();
+        expect(typeof data?.id).toBe("string");
+        expect(data?.id.length).toBe(4);
         done();
       });
     });
@@ -19,9 +19,8 @@ describe("store function", () => {
       const input = "Not a buffer";
       store(input as any, (error, data) => {
         if (error instanceof Error) {
-          expect(error).to.be.an("error");
-          expect(error.message).to.equal("input must be a buffer");
-          expect(data).to.be.undefined;
+          expect(error.message).toEqual("input must be a buffer");
+          expect(data).not.toBeDefined();
           done();
         }
       });
@@ -34,7 +33,7 @@ describe("store function", () => {
       const startTime = Date.now();
       store(buffer, (error, data) => {
         const endTime = Date.now();
-        expect(endTime - startTime).to.be.at.least(300);
+        expect(endTime - startTime).toBeGreaterThanOrEqual(300);
         done();
       });
     });
