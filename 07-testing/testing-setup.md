@@ -3,7 +3,7 @@
 1. Install all the things
 
 ```
-npm install jest @types/jest supertest @types/supertest ts-jest
+npm install --save-dev jest @types/jest supertest @types/supertest ts-jest
 ```
 
 2. Initialise the Jest config
