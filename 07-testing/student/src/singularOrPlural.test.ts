@@ -1,4 +1,3 @@
-import { expect } from "chai";
 import getSinguralOrPlural from "./singularOrPlural";
 
 // Exercise 4
