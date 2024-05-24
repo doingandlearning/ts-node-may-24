@@ -15,31 +15,45 @@ export async function createUser(
     next(error);
   }
 }
-export function getAllUsers(req: Request, res: Response, next: NextFunction) {
-  return res.json(users);
+
+export async function getAllUsers(
+  req: Request,
+  res: Response,
+  next: NextFunction
+) {
+  try {
+    const users = await User.find();
+    return res.json(users);
+  } catch (error) {
+    next(error);
+  }
 }
 
-export function getUserById(req: Request, res: Response, next: NextFunction) {
-  const user = users.find((user) => user.id === req.params.userId);
-
-  if (!user) {
-    return res.status(404).json({ message: "User not found" });
+export async function getUserById(
+  req: Request,
+  res: Response,
+  next: NextFunction
+) {
+  try {
+    const user = await User.findById(req.params.id);
+    if (!user) {
+      return res.status(404).json({ message: "User not found" });
+    }
+    res.json(user);
+  } catch (error) {
+    next(error);
   }
-  res.json(user);
 }
 
-export function updateUser(req: Request, res: Response, next: NextFunction) {
-  const userId = req.params.userId;
-  const userIndex = users.findIndex((user) => user.id === userId);
-
-  if (userIndex === -1) {
-    return res.status(404).json({ message: "User not found" });
-  }
-
-  // ... spread operator
-  users[userIndex] = { ...users[userIndex], ...req.body };
-
-  res.json(users[userIndex]);
+export async function updateUser(
+  req: Request,
+  res: Response,
+  next: NextFunction
+) {
+  const updatedUser = await User.findByIdAndUpdate(req.params.id, {
+    new: true,
+  });
+  res.json(updatedUser);
 }
 
 export function replaceUser(req: Request, res: Response, next: NextFunction) {
