@@ -5,7 +5,7 @@ new URIError("Something went wrong!");
 
 class CHError extends Error {
   code: string;
-
+  reqDetails: string;
   constructor(message, code = "ERR_CH_ERR") {
     super(message);
     this.code = code;
@@ -13,14 +13,15 @@ class CHError extends Error {
   }
 }
 
+type NewError = RangeError & { code?: string; detailedMessage?: string };
+
 try {
-  const newError: RangeError & { code?: string } = new RangeError(
-    "Something went wrong!"
-  );
+  const newError: NewError = new RangeError("Something went wrong!");
   newError.code = "ERR_USER_INPUT_412";
+  newError.detailedMessage = "";
   throw new CHError("Something went wrong!", "ERR_USER_INPUT_412");
 } catch (error) {
-  if (error.code === "ERR_USER_INPUT_412") {
+  if (error.name === "CHError") {
     // Sent to our team
     console.log("Meaningful message ... ");
     console.log(error);

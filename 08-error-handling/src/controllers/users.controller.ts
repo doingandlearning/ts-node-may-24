@@ -6,9 +6,7 @@ const users: User[] = [];
 export function createUser(req: Request, res: Response, next: NextFunction) {
   const user: User = req.body; // id!!
   if (!user.location || !user.name) {
-    return res
-      .status(400)
-      .json({ message: "You need to send the location and name" });
+    throw new Error("You need to send the location and name");
   }
   user.id = String(users.length + 1);
   users.push(user);
