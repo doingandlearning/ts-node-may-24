@@ -8,13 +8,14 @@
     "test:watch": "jest --watch",
     "start": "node dist/index.js",
     "build": "tsc --project tsconfig.prod.json",
-    "dev": "tsx --watch src/index"
+    "dev": "tsx --env-file=.env --watch src/index"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "@types/node": "^20.12.12",
-    "express": "^4.19.2"
+    "express": "^4.19.2",
+    "mongoose": "^8.4.0"
   },
   "devDependencies": {
     "@types/express": "^4.17.21",
