@@ -1,8 +1,5 @@
 import mongoose from "mongoose";
 
 export default async function connectToDb() {
-  return mongoose.connect(process.env.DATABASE_URI || "mongodb://localhost", {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-  });
+  return mongoose.connect(process.env.DATABASE_URI || "mongodb://localhost");
 }
