@@ -1,4 +1,3 @@
-import { expect } from "chai";
 import store from "./store-async";
 
 describe("store function", () => {

@@ -1,4 +1,3 @@
-import { expect } from "chai";
 import filterBiggestNumbers from "./filterBiggest";
 
 describe("Will throw if the first parameter is not an array", () => {
