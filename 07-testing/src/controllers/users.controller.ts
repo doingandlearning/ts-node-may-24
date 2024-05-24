@@ -12,7 +12,7 @@ export function createUser(req: Request, res: Response, next: NextFunction) {
   }
   user.id = String(users.length + 1);
   users.push(user);
-  res.json(user);
+  res.status(201).json(user);
 }
 
 export function getAllUsers(req: Request, res: Response, next: NextFunction) {
